@@ -10,3 +10,6 @@ agregar en el archivoo composer.json PruebaBundle, src/PruebaBundle
 
 composer dump-autoload
 
+create database makrosoft in phpmyadmin, activate the database server
+php bin/console doctrine:database:create
+

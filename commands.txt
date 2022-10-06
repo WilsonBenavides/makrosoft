@@ -1,0 +1,12 @@
+composer create-project symfony/framework-standard-edition symfony-makrosoft "3.4.*"
+
+php bin/console server:run
+symfony server:run -d
+
+php bin/console generate:bundle
+->no->PruebaBundle->src/->annotation
+
+agregar en el archivoo composer.json PruebaBundle, src/PruebaBundle
+
+composer dump-autoload
+

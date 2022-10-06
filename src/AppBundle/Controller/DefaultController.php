@@ -27,9 +27,9 @@ class DefaultController extends Controller
     }
 
      /**
-     * @Route("/contactar", name="contactar")
+     * @Route("/contactar/{sitio}", name="contactar")
      */
-    public function contactarAction(Request $request)
+    public function contactarAction(Request $request, $sitio="todos" )
     {
         // replace this example code with whatever you need
         return $this->render('front/bares.html.twig');

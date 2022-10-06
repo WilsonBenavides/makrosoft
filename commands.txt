@@ -1,7 +1,7 @@
 composer create-project symfony/framework-standard-edition symfony-makrosoft "3.4.*"
 
 php bin/console server:run
-symfony server:run -d
+symfony server:start -d
 
 php bin/console generate:bundle
 ->no->PruebaBundle->src/->annotation
@@ -13,3 +13,14 @@ composer dump-autoload
 create database makrosoft in phpmyadmin, activate the database server
 php bin/console doctrine:database:create
 
+php bin/console doctrine:generate:entity
+
+name AppBundle:Tapa-> annotation -> nombre -> string -> 255 -> false -> false
+description -> text -> false -> false
+ingregientes -> text -> false -> false
+foto -> string -> 255 -> false -> false
+fechaCreacion -> datetime -> false -> false
+top -> boolean -> false -> false
+
+crea o actualiza las tablas en la base de datos, revisar en phpmyadmin se ha creado la tabla tapa
+php bin/console doctrine:schema:update --force

@@ -23,6 +23,6 @@ class DefaultController extends Controller
     public function nosotrosAction(Request $request)
     {
         // replace this example code with whatever you need
-        return $this->render('front/index.html.twig');
+        return $this->render('front/nosotros.html.twig');
     }
 }

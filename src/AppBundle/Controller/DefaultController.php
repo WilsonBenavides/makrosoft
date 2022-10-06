@@ -32,6 +32,6 @@ class DefaultController extends Controller
     public function contactarAction(Request $request, $sitio="todos" )
     {
         // replace this example code with whatever you need
-        return $this->render('front/bares.html.twig');
+        return $this->render('front/bares.html.twig', array("sitio" => $sitio));
     }
 }

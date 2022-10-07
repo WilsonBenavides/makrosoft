@@ -24,3 +24,6 @@ top -> boolean -> false -> false
 
 crea o actualiza las tablas en la base de datos, revisar en phpmyadmin se ha creado la tabla tapa
 php bin/console doctrine:schema:update --force
+
+en la base de datos insertar dos nuevas tapas.
+INSERT INTO `tapa` (`id`, `nombre`, `descripcion`, `ingredientes`, `foto`, `fechaCreacion`, `top`) VALUES (NULL, 'tapa 1', 'descripcion tapa 1', '1. pan\r\n2. carne', '', '2022-09-29 19:18:41', '0'), (NULL, 'Tapa 2', 'descripcion tapa 2', '1. pan\r\n2. carne', '', '2022-10-05 19:18:41', '1');

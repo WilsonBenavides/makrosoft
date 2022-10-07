@@ -17,9 +17,9 @@ class DefaultController extends Controller
         //capturar el repositorio de la Tabla contra la DB
         $tapaRepository = $this->getDoctrine()->getRepository(Tapa::class);
         $tapas = $tapaRepository->findAll();
-        var_dump($tapas);
+
         // replace this example code with whatever you need
-        return $this->render('front/index.html.twig');
+        return $this->render('front/index.html.twig', array('tapas' => $tapas ));
     }
 
     /**

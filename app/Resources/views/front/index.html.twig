@@ -46,19 +46,19 @@
   <h1 class="my-4">Nuestras mejores tapas</h1>
 
   <div class="row">
-
+    {% for tapa in tapas %}
     <div class="col-lg-4 col-sm-6 portfolio-item">
       <div class="card h-100">
         <a href="#"><img class="card-img-top" src="{{ asset('img/paco.png') }}" alt=""></a>
         <div class="card-body">
           <h4 class="card-title">
-            <a href="">texto</a>
+            <a href="{{path('homepage',{'id': tapa.id})}}">{{tapa.nombre}}</a>
           </h4>
-          <p class="card-text">descripcion... descripcion... descripcion... descripcion... descripcion... descripcion... descripcion... </p>
+          <p class="card-text">{{tapa.descripcion}}</p>
         </div>
       </div>
     </div>
-
+    {% endfor %}
   </div>
 </div>
 {% endblock %}

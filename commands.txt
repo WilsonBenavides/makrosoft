@@ -30,3 +30,10 @@ INSERT INTO `tapa` (`id`, `nombre`, `descripcion`, `ingredientes`, `foto`, `fech
 
 despues del video 24 aparece un error en el VSCODE, pero no de symfony, seguimos trabajando normalmente.
 
+episodio 26 visitar la url http://localhost:8000/tapa/1
+
+si visitamos localhost:8000/tapa nos tira un error por ahora
+
+ir a la página http://localhost:8000/ y dar click sobre alguno de los productos debe mostrar la información de cada producto en especifico.
+
+si visitamos localhost:8000/tapa ya no hay error pero en localhost:8000/tapa/ si hay 

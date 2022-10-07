@@ -45,7 +45,12 @@ class DefaultController extends Controller
      */
     public function tapaAction(Request $request, $id = null )
     {
-        // replace this example code with whatever you need
-        return $this->render('front/tapa.html.twig', array("id" => $id));
+        if ($id != null ) {
+            $tapaRepository = $this->getDoctrine()->getRepository(Tapa::class);
+            $tapa = $tapaRepository->find( $id );
+            return $this->render('front/tapa.html.twig', array("tapa" => $tapa));
+        } else {
+            return $this->redirectToRoute('homepage');
+        }
     }
 }

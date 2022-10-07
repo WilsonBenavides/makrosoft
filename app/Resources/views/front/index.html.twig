@@ -49,10 +49,10 @@
     {% for tapa in tapas %}
     <div class="col-lg-4 col-sm-6 portfolio-item">
       <div class="card h-100">
-        <a href="#"><img class="card-img-top" src="{{ asset('img/paco.png') }}" alt=""></a>
+        <a href="{{ path('tapa', { 'id' : tapa.id }) }}"><img class="card-img-top" src="{{ asset('img/paco.png') }}" alt=""></a>
         <div class="card-body">
           <h4 class="card-title">
-            <a href="{{path('homepage',{'id': tapa.id})}}">{{tapa.nombre}}</a>
+            <a href="{{path('tapa',{'id': tapa.id})}}">{{tapa.nombre}}</a>
           </h4>
           <p class="card-text">{{tapa.descripcion}}</p>
         </div>

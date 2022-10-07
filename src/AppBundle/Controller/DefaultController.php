@@ -39,4 +39,13 @@ class DefaultController extends Controller
         // replace this example code with whatever you need
         return $this->render('front/bares.html.twig', array("sitio" => $sitio));
     }
+
+    /**
+     * @Route("/tapa/{id}", name="tapa")
+     */
+    public function tapaAction(Request $request, $id = null )
+    {
+        // replace this example code with whatever you need
+        return $this->render('front/tapa.html.twig', array("id" => $id));
+    }
 }

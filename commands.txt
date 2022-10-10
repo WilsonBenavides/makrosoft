@@ -44,3 +44,10 @@ si visitamos localhost:8000/tapa ya no hay error pero en localhost:8000/tapa/ si
 
 32 despues de rellenar los campos de http://localhost:8000/gestionTapas/nuevaTapa le damos click en crear y nos inserta en la base de datos y nos redirije a la nueva tapa
 revisar en phpmyadmin si se insertó correctamente
+
+descargar bundlle CKEditor
+composer require egeloen/ckeditor-bundle
+
+php bin/console ckeditor:install
+
+php bin/console assets:install web

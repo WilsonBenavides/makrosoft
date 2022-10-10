@@ -51,3 +51,5 @@ composer require egeloen/ckeditor-bundle
 php bin/console ckeditor:install
 
 php bin/console assets:install web
+
+34 visitar http://localhost:8000/gestionTapas/nuevaTapa

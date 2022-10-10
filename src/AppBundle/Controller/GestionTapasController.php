@@ -18,13 +18,27 @@ class GestionTapasController extends Controller
      */
     public function nuevaTapaAction(Request $request)
     {
-        if( !is_null( $request )) {
-            $datos = $request->request->all();
-            var_dump( $datos );
-        }
+        
         $tapa = new Tapa();
         //contruyendo el formulario
         $form = $this->createForm( TapaType::class, $tapa );    
+
+        //recogemos la informacion
+        $form->handleRequest( $request );
+        if ( $form->isSubmitted() && $form->isValid() ) {
+            //rellenar el Entity Tapa
+            $tapa = $form->getData();
+            $tapa->setIngredientes( "" );
+            $tapa->setFoto( "" );
+            $tapa->setTop( 0 );
+            $tapa->setFechaCreacion(new \DateTime()  );
+
+            //almacenar nueva tapa
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist( $tapa );
+            $entityManager->flush();
+            return $this->redirectToRoute( 'tapa', array( 'id' => $tapa->getId() ) );
+        }
         
         return $this->render('gestionTapas/nuevaTapa.html.twig', array( 'form' => $form->createView() ));
     }

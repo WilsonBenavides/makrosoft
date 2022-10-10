@@ -42,3 +42,5 @@ si visitamos localhost:8000/tapa ya no hay error pero en localhost:8000/tapa/ si
 
 31 al agregar informacion al formulario y dar click en Nueva Tapa ya está enviando los datos por productos
 
+32 despues de rellenar los campos de http://localhost:8000/gestionTapas/nuevaTapa le damos click en crear y nos inserta en la base de datos y nos redirije a la nueva tapa
+revisar en phpmyadmin si se insertó correctamente

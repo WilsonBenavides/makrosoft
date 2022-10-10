@@ -40,3 +40,5 @@ si visitamos localhost:8000/tapa ya no hay error pero en localhost:8000/tapa/ si
 
 28 visita la url http://localhost:8000/gestionTapas/nuevaTapa
 
+31 al agregar informacion al formulario y dar click en Nueva Tapa ya está enviando los datos por productos
+

@@ -37,3 +37,6 @@ si visitamos localhost:8000/tapa nos tira un error por ahora
 ir a la página http://localhost:8000/ y dar click sobre alguno de los productos debe mostrar la información de cada producto en especifico.
 
 si visitamos localhost:8000/tapa ya no hay error pero en localhost:8000/tapa/ si hay 
+
+28 visita la url http://localhost:8000/gestionTapas/nuevaTapa
+

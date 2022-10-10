@@ -17,12 +17,11 @@ class GestionTapasController extends Controller
      */
     public function nuevaTapaAction(Request $request)
     {
-        //capturar el repositorio de la Tabla contra la DB
-        $tapaRepository = $this->getDoctrine()->getRepository(Tapa::class);
-        $tapas = $tapaRepository->findAll( );
-
-        // replace this example code with whatever you need
-        return $this->render('front/index.html.twig', array('tapas' => $tapas ));
+        $tapa = new Tapa();
+        $formBuilder = $this->createFormBuilder( $tapa );
+        $form = $formBuilder->getForm();
+        
+        return $this->render('gestionTapas/nuevaTapa.html.twig', array( 'form' => $form->createView() ));
     }
 
 }

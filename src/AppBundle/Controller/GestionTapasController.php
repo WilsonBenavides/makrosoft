@@ -28,7 +28,13 @@ class GestionTapasController extends Controller
         if ( $form->isSubmitted() && $form->isValid() ) {
             //rellenar el Entity Tapa
             $tapa = $form->getData();
-            $tapa->setFoto( "" );            
+            $fotoFile = $tapa->getFoto();
+            $fileName = $this->generateUniqueFileName().'.'.$fotoFile->guessExtension();
+            $fotoFile->move(
+                $this->getParameter( 'tapas_directory' ),
+                $fileName
+            );
+            $tapa->setFoto( $fileName );            
             $tapa->setFechaCreacion(new \DateTime()  );
 
             //almacenar nueva tapa
@@ -41,4 +47,11 @@ class GestionTapasController extends Controller
         return $this->render('gestionTapas/nuevaTapa.html.twig', array( 'form' => $form->createView() ));
     }
 
+    /**
+     * @return string
+     */
+    private function generateUniqueFileName() 
+    {
+        return md5( uniqid() );
+    }
 }

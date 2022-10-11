@@ -1,0 +1,25 @@
+{# app/Resources/views/blog/index.html.twig #}
+{% extends 'base.html.twig' %}
+{% block body %}
+</header>
+<!-- Page Content -->
+<div class="container">
+  <h1 class="my-4">Todas nuestras categorias</h1>
+
+  <!-- Portfolio Item Row -->
+  <div class="row">
+
+    <div class="col-md-8">
+      <img class="img-fluid" src="{{ asset(tapaImg~categoria.foto) }}" alt="">
+    </div>
+
+    <div class="col-md-4">
+      <h3 class="my-3">{{categoria.nombre}}</h3>
+      <p>{{categoria.descripcion}}</p>
+    </div>
+
+  </div>
+    
+  <!-- /.row -->
+</div>
+{% endblock %}

@@ -65,3 +65,4 @@ y se crea la tabla categoria, se actualizan ambas tablas con las relaciones
 para incluir los seters y getters
 php bin/console doctrine:generate:entities AppBundle
 
+41 visitar la url http://localhost:8000/gestionTapas/nuevaCategoria

@@ -53,3 +53,15 @@ php bin/console ckeditor:install
 php bin/console assets:install web
 
 34 visitar http://localhost:8000/gestionTapas/nuevaTapa
+
+40 php bin/console doctrine:generate:entity
+name->AppBundle:Categoria,  ->annotation,  ->nombre,  ->string,  ->128,  ->false,  ->false
+descripcion->text->false->false
+foto->string->512->false->false   enter  exit
+
+php bin/console doctrine:schema:update --force
+y se crea la tabla categoria, se actualizan ambas tablas con las relaciones
+
+para incluir los seters y getters
+php bin/console doctrine:generate:entities AppBundle
+

@@ -66,3 +66,5 @@ para incluir los seters y getters
 php bin/console doctrine:generate:entities AppBundle
 
 41 visitar la url http://localhost:8000/gestionTapas/nuevaCategoria
+
+42 insertar dos categorias de ejemplo para verificar el funcionamiento, revisar en phpmyadmin que las tablas están relacionadas

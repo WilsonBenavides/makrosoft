@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Tapa
@@ -35,12 +36,6 @@ class Tapa
      */
     private $descripcion;
 
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ingredientes", type="text")
-     */
-    private $ingredientes;
 
     /**
      * @var string
@@ -68,6 +63,20 @@ class Tapa
      * @ORM\JoinColumn(name="categoria_id", referencedColumnName="id")
      */
     private $categoria;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Ingrediente")
+     * @ORM\JoinTable(name="ingredientes_tapas",
+     *      joinColumns={@ORM\JoinColumn(name="id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="ingredientes", referencedColumnName="id")}
+     *      )
+     */
+    private $ingredientes;
+
+    public function __construct()
+    {
+        $this->ingredientes = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
     /**
      * Get id
@@ -125,30 +134,6 @@ class Tapa
     public function getDescripcion()
     {
         return $this->descripcion;
-    }
-
-    /**
-     * Set ingredientes
-     *
-     * @param string $ingredientes
-     *
-     * @return Tapa
-     */
-    public function setIngredientes($ingredientes)
-    {
-        $this->ingredientes = $ingredientes;
-
-        return $this;
-    }
-
-    /**
-     * Get ingredientes
-     *
-     * @return string
-     */
-    public function getIngredientes()
-    {
-        return $this->ingredientes;
     }
 
     /**
@@ -245,5 +230,39 @@ class Tapa
     public function getCategoria()
     {
         return $this->categoria;
+    }
+
+    /**
+     * Add ingrediente
+     *
+     * @param \AppBundle\Entity\Ingrediente $ingrediente
+     *
+     * @return Tapa
+     */
+    public function addIngrediente(\AppBundle\Entity\Ingrediente $ingrediente)
+    {
+        $this->ingredientes[] = $ingrediente;
+
+        return $this;
+    }
+
+    /**
+     * Remove ingrediente
+     *
+     * @param \AppBundle\Entity\Ingrediente $ingrediente
+     */
+    public function removeIngrediente(\AppBundle\Entity\Ingrediente $ingrediente)
+    {
+        $this->ingredientes->removeElement($ingrediente);
+    }
+
+    /**
+     * Get ingredientes
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getIngredientes()
+    {
+        return $this->ingredientes;
     }
 }

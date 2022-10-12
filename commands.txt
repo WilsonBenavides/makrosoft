@@ -68,3 +68,17 @@ php bin/console doctrine:generate:entities AppBundle
 41 visitar la url http://localhost:8000/gestionTapas/nuevaCategoria
 
 42 insertar dos categorias de ejemplo para verificar el funcionamiento, revisar en phpmyadmin que las tablas están relacionadas
+
+43 php bin/console doctrine:generate:entity
+AppBundle:Ingregiente->annotation->nombre->255->false->false
+
+43 php bin/console doctrine:schema:update --force
+
+43 verificar en phpmyadmin que se hayan creado las tablas ingredientes y la tabla intermedia ingredientes_tapas
+
+43 php bin/console doctrine:generate:entities AppBundle
+
+43 visitar http://localhost:8000/gestionTapas/nuevoIngrediente  agregar algunos ingrediente y luego
+
+43 visitar http://localhost:8000/gestionTapas/nuevaTapa  y ver si en ingredientes sale una lista
+

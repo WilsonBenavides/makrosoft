@@ -17,7 +17,10 @@
       <h3 class="my-3">{{tapa.nombre}}</h3>
       <p>{{tapa.descripcion}}</p>
       <h3 class="my-3">Ingredientes</h3>
-      {{tapa.ingredientes|raw}}
+      {% for ingrediente in tapa.ingredientes %}
+        {{ ingrediente }} <br>
+      {% endfor %}
+
       {% if is_granted('ROLE_ADMIN') %}
       <a href="{{path('gestion_nueva_tapa',{'id': tapa.id})}}"><i class="fa fa-pencil-square-o" aria-hidden="true"></i> Editar</a>
       {% endif %}

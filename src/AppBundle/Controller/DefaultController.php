@@ -18,7 +18,13 @@ class DefaultController extends Controller
     {
         //capturar el repositorio de la Tabla contra la DB
         $tapaRepository = $this->getDoctrine()->getRepository(Tapa::class);
-        $tapas = $tapaRepository->findByTop(1);
+        //$tapas = $tapaRepository->findByTop(1);
+        $query = $tapaRepository->createQueryBuilder( 't' )
+            ->where( 't.top = 1' )
+            ->setFirstResult( 3 ) 
+            ->setMaxResults( 3 )
+            ->getQuery();            
+        $tapas = $query->getResult();
 
         // replace this example code with whatever you need
         return $this->render('front/index.html.twig', array('tapas' => $tapas ));
